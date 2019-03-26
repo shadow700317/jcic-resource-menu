@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /v1/
+spring:
+  datasource:
+    url: jdbc:db2://172.16.20.31:50000/JCIC
+    username: db2inst1
+    password: db2inst1-pwd
+    driverClassName: com.ibm.db2.jcc.DB2Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    database-platform: DB2Platform
+    hibernate:
+      ddl-auto: none
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.DB2Dialect
